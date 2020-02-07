@@ -8,7 +8,7 @@
     },
     "files": [
         "README.md",
-        "BitRacer.ts",
+        "BitRacer.ts"
         
     ],
     "public": true
