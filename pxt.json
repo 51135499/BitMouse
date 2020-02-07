@@ -9,7 +9,7 @@
     "files": [
         "README.md",
         "BitRacer.ts",
-        "_locales/zh/BitRacer-strings.json"
+        
     ],
     "public": true
 }
