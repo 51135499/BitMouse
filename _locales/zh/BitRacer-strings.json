@@ -1,7 +1,2 @@
 {
-    "BitRacer.Motors.M_L|block": "左邊",
-    "BitRacer.Motors.M_R|block": "左邊",
-    "BitRacer.Motors.All|block": "全部"
-    "BitRacer.motorStop|block": "馬達 停止|%motors",
-    "BitRacer.motorRun|block": "馬達|%index|速度|%PWM"
 }
