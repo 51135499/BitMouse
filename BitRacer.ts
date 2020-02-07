@@ -21,21 +21,21 @@ namespace BitRacer {
             i2cbuf[0] = 0x00;
             i2cbuf[1] = PWM>>8;
             i2cbuf[2] = PWM;
-            pins.i2cWriteBuffer(N76_ADDR, buf);
+            pins.i2cWriteBuffer(N76_ADDR, i2cbuf);
         }
         if (index == 1) {
             i2cbuf[0] = 0x02;
             i2cbuf[1] = PWM>>8;
             i2cbuf[2] = PWM;
-            pins.i2cWriteBuffer(N76_ADDR, buf);
+            pins.i2cWriteBuffer(N76_ADDR, i2cbuf);
         }
         if (index == 2) {
             i2cbuf[0] = 0x00;
             i2cbuf[1] = PWM>>8;
             i2cbuf[2] = PWM;
-            pins.i2cWriteBuffer(N76_ADDR, buf);
+            pins.i2cWriteBuffer(N76_ADDR, i2cbuf);
             i2cbuf[0] = 0x02;
-            pins.i2cWriteBuffer(N76_ADDR, buf);
+            pins.i2cWriteBuffer(N76_ADDR, i2cbuf);
         }
     }
     //% weight=20
@@ -47,21 +47,21 @@ namespace BitRacer {
             i2cbuf[0] = 0x00;
             i2cbuf[1] = 0;
             i2cbuf[2] = 0;
-            pins.i2cWriteBuffer(N76_ADDR, buf);
+            pins.i2cWriteBuffer(N76_ADDR, i2cbuf);
         }
         if (motors == 1) {
             i2cbuf[0] = 0x02;
             i2cbuf[1] = 0;
             i2cbuf[2] = 0;
-            pins.i2cWriteBuffer(N76_ADDR, buf);
+            pins.i2cWriteBuffer(N76_ADDR, i2cbuf);
         }
         if (motors == 2) {
             i2cbuf[0] = 0x00;
             i2cbuf[1] = 0;
             i2cbuf[2] = 0;
-            pins.i2cWriteBuffer(N76_ADDR, buf);
+            pins.i2cWriteBuffer(N76_ADDR, i2cbuf);
             i2cbuf[0] = 0x02;
-            pins.i2cWriteBuffer(N76_ADDR, buf);
+            pins.i2cWriteBuffer(N76_ADDR, i2cbuf);
         }
     }
 	
