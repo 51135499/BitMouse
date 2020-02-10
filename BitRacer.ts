@@ -6,6 +6,7 @@ enum PingUnit {
     //% block="cm"
     Centimeters,
 }
+
 //% weight=0 color=#f98020 icon="\uf1ba" block="BitRacer"
 namespace BitRacer {
     export enum Motors {
@@ -27,12 +28,11 @@ namespace BitRacer {
         IR4 = 0x06,
         //% blockId="IR5_Sensors" block="IR5"
         IR5 = 0x07,
-    }
-	
-	export enum Lines {
-        //% blockId="While_line" block="While Line"
-        While = 0x0A,
-        //% blockId="Black_line" block="Black Line"
+    }	
+	export enum LineColor {
+        //% blockId="White" block="White"
+        White = 0x0A,
+        //% blockId="Black" block="Black"
         Black = 0x0B
     }
 	export enum LEDs {
@@ -42,12 +42,13 @@ namespace BitRacer {
         LED_L = 16
     }
 	export enum LEDswitch {
-        //% blockId="LED_right" block="on"
-        on = 0x00,
-        //% blockId="LED_left" block="off"
-        off = 0x01
+        //% blockId="on" block="on"
+        on = 0,
+        //% blockId="off" block="off"
+        off = 1
     }
-    //% weight=100
+    
+	//% weight=100
     //% blockId=motor_MotorRun block="motor|%index|at speed|%PWM"
     //% PWM.min=-1000 PWM.max=1000
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=3
@@ -74,6 +75,7 @@ namespace BitRacer {
             pins.i2cWriteBuffer(N76_ADDR, i2cbuf);
         }
     }
+	
 	//% weight=90
     //% blockId=sensor_readIR block="read |%SensorID sensor"
     //% SensorID.fieldEditor="gridpicker" SensorID.fieldOptions.columns=3
@@ -86,16 +88,22 @@ namespace BitRacer {
         )
         return pins.i2cReadNumber(N76_ADDR, NumberFormat.UInt16BE, false)
     }
+	
 	//% weight=80
     //% blockId=LED_Set block="LED|%LedPin|%status"
     //% LedPin.fieldEditor="gridpicker" LedPin.fieldOptions.columns=1
     //% status.fieldEditor="gridpicker" status.fieldOptions.columns=1
 	export function LED(LedPin: LEDs,status: LEDswitch): void {
-        if (LedPin = LEDs.LED_R)
+        if (LedPin == LEDs.LED_R)
+		{
             pins.digitalWritePin(DigitalPin.P8, status)
-        if (LedPin = LEDs.LED_L)
+		}
+        else if (LedPin == LEDs.LED_L)
+		{
             pins.digitalWritePin(DigitalPin.P16, status)
+		}
     }
+	
 	//%color=#308f60
 	//% weight=40
 	//% blockId=sonar_ping block="read ultrasonic sensor |%unit "
@@ -119,7 +127,7 @@ namespace BitRacer {
 	
 	//% color=#2080ff
 	//% weight=30
-	//% blockId=sensor_StartSampling block="Start Sampling"
+	//% blockId=sensor_StartSampling block="Calibrate Begin"
     export function Start_Sampling(): void {
         pins.i2cWriteNumber(
             N76_ADDR,
@@ -131,12 +139,12 @@ namespace BitRacer {
 	
 	//% color=#2080ff
 	//% weight=20
-    //% blockId=sensor_EndSampling block="Sampling|%ID End"
-    //% ID.fieldEditor="gridpicker" ID.fieldOptions.columns=2
-	export function End_Sampling(ID: Lines): void {
+    //% blockId=sensor_EndSampling block="Calibrate End|%Color (Line)"
+    //% Color.fieldEditor="gridpicker" Color.fieldOptions.columns=1
+	export function End_Sampling(Color: LineColor): void {
         pins.i2cWriteNumber(
             N76_ADDR,
-            ID,
+            Color,
             NumberFormat.UInt8LE,
             false
         )
@@ -152,6 +160,6 @@ namespace BitRacer {
             NumberFormat.UInt8LE,
             false
         )
-        return pins.i2cReadNumber(N76_ADDR, NumberFormat.UInt16BE, false)
+        return pins.i2cReadNumber(N76_ADDR, NumberFormat.Int16BE, false)
     }
 }
