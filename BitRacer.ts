@@ -127,7 +127,7 @@ namespace BitRacer {
 	
 	//% color=#2080ff
 	//% weight=30
-	//% blockId=sensor_StartSampling block="Calibrate Begin"
+	//% blockId=sensor_CalibrateBegin block="Calibrate Begin"
     export function CalibrateBegin(): void {
         pins.i2cWriteNumber(
             N76_ADDR,
@@ -139,7 +139,7 @@ namespace BitRacer {
 	
 	//% color=#2080ff
 	//% weight=20
-    //% blockId=sensor_EndSampling block="Calibrate End|%Color (Line)"
+    //% blockId=sensor_CalibrateEnd block="Calibrate End|%Color (Line)"
     //% Color.fieldEditor="gridpicker" Color.fieldOptions.columns=1
 	export function CalibrateEnd(Color: LineColor): void {
         pins.i2cWriteNumber(
@@ -152,7 +152,7 @@ namespace BitRacer {
 	
 	//% color=#2080ff
     //% weight=10
-    //% blockId=sensor_Line block="read Line position"
+    //% blockId=sensor_readLine block="read Line position"
     export function readLine(): number {
         pins.i2cWriteNumber(
             N76_ADDR,
