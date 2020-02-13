@@ -25,7 +25,7 @@ namespace BitMouse {
         //% blockId="IR3_Sensors" block="IR3"
         IR3 = 0x05,
         //% blockId="IR4_Sensors" block="IR4"
-        IR4 = 0x06,
+        IR4 = 0x06
     }
 	export enum LEDs {
         //% blockId="LED_right" block="right"
