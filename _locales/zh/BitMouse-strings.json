@@ -1,0 +1,15 @@
+{
+    "BitRacer.Motors.M_L|block": "左邊",
+    "BitRacer.Motors.M_R|block": "右邊",
+	"BitRacer.Motors.All|block": "全部",
+	"BitRacer.IR_Sensors.IR1|block": "左前",
+	"BitRacer.IR_Sensors.IR2|block": "左斜",
+	"BitRacer.IR_Sensors.IR3|block": "右斜",
+	"BitRacer.IR_Sensors.IR4|block": "右前",
+	"BitRacer.LEDs.LED_R|block": "右邊",
+	"BitRacer.LEDs.LED_L|block": "左邊",
+	"BitRacer.LEDswitch.on|block": "開啟",
+	"BitRacer.LEDswitch.off|block": "關閉",
+	"BitRacer.motorRun|block": "馬達|%index 速度|%speed",
+	"BitRacer.readIR|block": "讀取|%SensorID 感測器",
+}

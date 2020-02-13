@@ -1,15 +1,15 @@
 {
-    "name": "BitRacer",
-    "version": "0.0.5",
-    "description": "BitRacer test",
+    "name": "BitMouse",
+    "version": "0.0.4",
+    "description": "BitMouse test",
     "license": "MIT",
     "dependencies": {
         "core": "*"
     },
     "files": [
         "README.md",
-        "BitRacer.ts",
-        "_locales/zh/BitRacer-strings.json"
+        "BitMouse.ts",
+        "_locales/zh/BitMouse-strings.json"
     ],
     "public": true
 }
