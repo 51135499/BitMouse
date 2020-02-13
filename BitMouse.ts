@@ -4,7 +4,7 @@ enum PingUnit {
     //% block="μs"
     MicroSeconds,
     //% block="cm"
-    Centimeters,
+    Centimeters
 }
 
 //% weight=0 color=#f98020 icon="\uf1ba" block="BitMouse"
