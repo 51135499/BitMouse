@@ -12,5 +12,5 @@
 	"BitMouse.LEDswitch.off|block": "關閉",
 	"BitMouse.motorRun|block": "馬達|%index 速度|%speed",
 	"BitMouse.readIR|block": "讀取|%SensorID 感測器",
-	"BitRacer.readIR2|block": "讀取 第|%SensorID 顆 感測器"
+	"BitMouse.readIR2|block": "讀取 第|%SensorID 顆 感測器"
 }
