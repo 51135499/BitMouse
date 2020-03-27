@@ -80,7 +80,18 @@ namespace BitMouse {
         )
         return pins.i2cReadNumber(N76_ADDR, NumberFormat.UInt16BE, false)
     }
-	
+	//% weight=85
+	//% blockId=sensor_readIR2 block="read |%SensorID sensor"
+	//% SensorIDs.min=0 SensorIDs.max=4
+    export function readIR2(SensorIDs: number): number {
+        pins.i2cWriteNumber(
+            N76_ADDR,
+            SensorIDs+3,
+            NumberFormat.UInt8LE,
+            false
+        )
+        return pins.i2cReadNumber(N76_ADDR, NumberFormat.UInt16BE, false)
+    }
 	//% weight=80
     //% blockId=LED_Set block="LED|%LedPin|%status"
     //% LedPin.fieldEditor="gridpicker" LedPin.fieldOptions.columns=1
