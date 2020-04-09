@@ -47,13 +47,13 @@ namespace BitMouse {
     export function motorRun(index: Motors, PWM: number): void {
         let i2cbuf = pins.createBuffer(3);
         if (index == 0) {
-            i2cbuf[0] = 0x00;
+            i2cbuf[0] = 0x02;
             i2cbuf[1] = PWM >> 8;
             i2cbuf[2] = PWM;
             pins.i2cWriteBuffer(N76_ADDR, i2cbuf);
         }
         if (index == 1) {
-            i2cbuf[0] = 0x02;
+            i2cbuf[0] = 0x00;
             i2cbuf[1] = PWM >> 8;
             i2cbuf[2] = PWM;
             pins.i2cWriteBuffer(N76_ADDR, i2cbuf);
@@ -82,7 +82,7 @@ namespace BitMouse {
     }
 	//% weight=85
 	//% blockId=sensor_readIR2 block="read |%SensorID sensor"
-	//% SensorIDs.min=0 SensorIDs.max=4
+	//% SensorIDs.min=0 SensorIDs.max=3
     export function readIR2(SensorIDs: number): number {
         pins.i2cWriteNumber(
             N76_ADDR,
