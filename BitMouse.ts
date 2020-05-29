@@ -106,25 +106,4 @@ namespace BitMouse {
             pins.digitalWritePin(DigitalPin.P16, status)
 		}
     }
-	
-	//%color=#308f60
-	//% weight=40
-	//% blockId=sonar_ping block="read ultrasonic sensor |%unit "
-    export function pingultrasonic_sensor(unit: PingUnit, maxCmDistance = 500): number {
-        // send pulse
-        pins.setPull(DigitalPin.P1, PinPullMode.PullNone);
-        pins.digitalWritePin(DigitalPin.P1, 0);
-        control.waitMicros(2);
-        pins.digitalWritePin(DigitalPin.P1, 1);
-        control.waitMicros(10);
-        pins.digitalWritePin(DigitalPin.P1, 0);
-
-        // read pulse
-        const d = pins.pulseIn(DigitalPin.P2, PulseValue.High, maxCmDistance * 58);
-
-        switch (unit) {
-            case PingUnit.Centimeters: return Math.idiv(d, 58);
-            default: return d ;
-        }
-    }
 }
