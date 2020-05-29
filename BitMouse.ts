@@ -1,12 +1,4 @@
 const N76_ADDR = 0x10
-
-enum PingUnit {
-    //% block="μs"
-    MicroSeconds,
-    //% block="cm"
-    Centimeters
-}
-
 //% weight=0 color=#f98020 icon="\uf1ba" block="BitMouse"
 namespace BitMouse {
     export enum Motors {
