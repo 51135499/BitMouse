@@ -11,5 +11,9 @@
         "BitMouse.ts",
         "_locales/zh/BitMouse-strings.json"
     ],
-    "public": true
+    "public": true,
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj"
 }
